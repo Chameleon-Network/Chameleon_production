@@ -1,0 +1,13 @@
+{
+  "name": "Chameleon Wallet",
+  "displayName": "Chameleon Wallet",
+  "plugins": [
+    ["expo-secure-store"],
+    [
+      "expo-local-authentication",
+      {
+        "faceIDPermission": "Allow $(PRODUCT_NAME) to use Face ID."
+      }
+    ]
+  ]
+}

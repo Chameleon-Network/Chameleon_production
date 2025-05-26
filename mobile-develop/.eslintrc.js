@@ -1,0 +1,106 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: ['plugin:react/recommended', '@react-native'],
+  parserOptions: {
+    sourceType: 'module',
+  },
+  plugins: ['react', '@typescript-eslint', 'import'],
+  rules: {
+    quotes: [
+      'error',
+      'single',
+      {
+        avoidEscape: true,
+      },
+    ],
+    'no-empty-pattern': 1,
+    '@typescript-eslint/no-empty-function': 1,
+    '@typescript-eslint/ban-ts-comment': 0,
+    '@typescript-eslint/no-explicit-any': 1,
+    '@typescript-eslint/explicit-module-boundary-types': 0,
+    'react/jsx-filename-extension': ['error', {extensions: ['.tsx']}],
+    'react-native/no-unused-styles': 2,
+    'react-native/split-platform-components': 2,
+    'react-native/no-inline-styles': 0,
+    'react-native/no-color-literals': 0,
+    'react-native/no-raw-text': 0,
+    'import/no-extraneous-dependencies': 2,
+    'import/extensions': ['error', 'never', {svg: 'always'}],
+    "import/no-cycle": [
+      "error",
+      {
+        maxDepth: 10,
+        ignoreExternal: true,
+      },
+    ],
+    'no-shadow': 0,
+    curly: 0,
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+      },
+    ],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'internal',
+          'external',
+          'builtin',
+          'index',
+          'sibling',
+          'parent',
+        ],
+        pathGroups: [
+          {
+            pattern: 'react+(|-native)',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'react+(|-*)',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: [],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+    'import/no-duplicates': 2,
+    'import/no-useless-path-segments': 2,
+    'import/prefer-default-export': 0,
+    'import/named': 0,
+    'import/namespace': 0,
+    'import/default': 0,
+    'import/no-named-as-default-member': 0,
+    'import/no-named-as-default': 0,
+    'import/no-unused-modules': 0,
+    'import/no-deprecated': 0,
+    '@typescript-eslint/indent': 0,
+    'import/no-anonymous-default-export': 2,
+    'react-hooks/rules-of-hooks': 1,
+    'react-hooks/exhaustive-deps': 'off',
+    camelcase: 0,
+    'prefer-destructuring': 2,
+    'no-nested-ternary': 2,
+    'comma-dangle': 0,
+    'react/display-name': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
+};

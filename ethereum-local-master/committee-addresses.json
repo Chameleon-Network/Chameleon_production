@@ -1,0 +1,52 @@
+{
+  "beaconCommittee": [
+    "0x7Ba2AD4AFDCD2D3733f671bfCa40e33fDD258A29",
+    "0x64b02E627219B0d80245E548B313faCC6900bD89",
+    "0x8a8F496B6fd2aFB158A762292AB348DdbbA27643",
+    "0x3F02c5B8b8e54F55dC41d6bf6d780C956301827c"
+  ],
+  "bridgeCommittee": [
+    "0x7Fff62C7e5Fc72ef27715dd77873d4F6F4066666",
+    "0x0D300af2A5BcC9E15da2CcF6844A8b38D5cFaaB8",
+    "0xE12E7dCf7C011F3AEc293B3c32e5318776Fa4616",
+    "0x93ed9cEefC307e666614DCa19C6215ae84cB7717"
+  ],
+  "wallets": {
+    "beacon": [
+      {
+        "address": "0x7Ba2AD4AFDCD2D3733f671bfCa40e33fDD258A29",
+        "privateKey": "0x540f4442be762330b8b1bd22e4a787b56f3c2a26d0ce9412c51e473fec1554af"
+      },
+      {
+        "address": "0x64b02E627219B0d80245E548B313faCC6900bD89",
+        "privateKey": "0x0630fed4e4fe1daafb6206556c3d33f195d1cd0ac4e6a8cf317eb4bca6fc1f64"
+      },
+      {
+        "address": "0x8a8F496B6fd2aFB158A762292AB348DdbbA27643",
+        "privateKey": "0xfd4cc675ccca012cbb896a900bac253cac50852a034dc29585acd058e0c8383d"
+      },
+      {
+        "address": "0x3F02c5B8b8e54F55dC41d6bf6d780C956301827c",
+        "privateKey": "0xd5c314d82fbd831ae96236455a297b28c6c34b2e0be526979b83ea8bbf324a26"
+      }
+    ],
+    "bridge": [
+      {
+        "address": "0x7Fff62C7e5Fc72ef27715dd77873d4F6F4066666",
+        "privateKey": "0x0c3eb8a103ae35468a0e9118bed7c1af61c728cf10844fd3f971fdd61874f15d"
+      },
+      {
+        "address": "0x0D300af2A5BcC9E15da2CcF6844A8b38D5cFaaB8",
+        "privateKey": "0x3810771578dd8a3959f69d15a2b3e9bafcf8bc291d3a1c61be5c3ff849ee13eb"
+      },
+      {
+        "address": "0xE12E7dCf7C011F3AEc293B3c32e5318776Fa4616",
+        "privateKey": "0xa76b9a209163f317b96f0369f3edb764f46e8357bde9edeb6c7368e86385c252"
+      },
+      {
+        "address": "0x93ed9cEefC307e666614DCa19C6215ae84cB7717",
+        "privateKey": "0x002d08f83f2f3555d99bfaf777934a4b600dba4a1d3f36612602e13a171e5d51"
+      }
+    ]
+  }
+}

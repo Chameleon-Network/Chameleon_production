@@ -1,0 +1,138 @@
+syntax = "proto3";
+
+option go_package="proto";
+
+message RegisterRequest {
+    string CommitteePublicKey = 1;
+    repeated string WantedMessages = 2;
+    bytes CommitteeID = 3;
+    string PeerID = 4;
+    string Role = 5;
+    string UUID = 6;
+}
+
+message UserRole {
+    string Layer = 1;
+    string Role = 2;
+    int32 Shard = 3;
+}
+
+message RegisterResponse {
+    repeated MessageTopicPair Pair = 1;
+    UserRole Role = 2;
+}
+
+message MessageTopicPair {
+    string Message = 1;
+    repeated string Topic = 2;
+    enum Action {
+        PUBSUB = 0;
+        PUB = 1;
+        SUB = 2;
+    }
+    repeated Action Act = 3;
+}
+
+message GetBlockShardByHashRequest {
+    int32 Shard = 1;
+    repeated bytes Hashes = 2;
+    int32 CallDepth = 3;
+    string UUID = 4;
+}
+
+message GetBlockShardByHashResponse {
+    repeated bytes Data = 1;
+}
+
+
+
+message GetBlockBeaconByHashRequest {
+    repeated bytes Hashes = 1;
+    int32 CallDepth = 2;
+    string UUID = 3;
+}
+
+message GetBlockBeaconByHashResponse {
+    repeated bytes Data = 1;
+}
+
+message GetBlockCrossShardByHashRequest {
+    int32 FromShard = 1;
+    int32 ToShard = 2;
+    repeated bytes Hashes = 3;
+    int32 CallDepth = 4;
+    string UUID = 5;
+}
+
+message GetBlockCrossShardByHashResponse {
+    repeated bytes Data = 1;
+}
+
+service HighwayService {
+    rpc Register(RegisterRequest) returns (RegisterResponse) {};
+
+    rpc GetBlockShardByHash(GetBlockShardByHashRequest) returns (GetBlockShardByHashResponse) {};
+    rpc GetBlockBeaconByHash(GetBlockBeaconByHashRequest) returns (GetBlockBeaconByHashResponse) {};
+    rpc GetBlockCrossShardByHash(GetBlockCrossShardByHashRequest) returns (GetBlockCrossShardByHashResponse) {};
+    
+    rpc StreamBlockByHeight(BlockByHeightRequest) returns (stream BlockData) {};
+    rpc StreamBlockByHash(BlockByHashRequest) returns (stream BlockData) {};
+}
+
+enum BlkType {
+    BlkShard = 0;
+    BlkXShard = 1;
+    BlkS2B = 2;
+    BlkBc = 3;
+}
+
+
+message BlockByHeightRequest {
+    BlkType Type = 1;
+    bool Specific = 2;
+    repeated uint64 Heights = 3;
+    int32 From = 4;
+    int32 To = 5; 
+    int32 CallDepth = 6;
+    string UUID = 7;
+    string SyncFromPeer = 8;
+}
+
+message BlockByHashRequest {
+    BlkType Type = 1;
+    repeated bytes Hashes = 2;
+    int32 From = 3;
+    int32 To = 4; 
+    int32 CallDepth = 5;
+    string UUID = 6;
+    string SyncFromPeer = 7;
+}
+
+message BlockData {
+    bytes Data = 1;
+}
+
+message GetChainCommitteeRequest {
+    int32 Epoch = 1;
+    int32 CommitteeID = 2;
+}
+
+message GetChainCommitteeResponse {
+    bytes Data = 1;
+}
+
+message GetHighwayInfosRequest {}
+
+message HighwayInfo {
+    string PeerInfo = 1;
+    repeated int32 SupportShards = 2;
+}
+
+message GetHighwayInfosResponse {
+    repeated HighwayInfo Highways = 1;
+}
+
+service HighwayConnectorService {
+    rpc GetChainCommittee(GetChainCommitteeRequest) returns (GetChainCommitteeResponse) {};
+    rpc GetHighwayInfos(GetHighwayInfosRequest) returns (GetHighwayInfosResponse) {};
+}

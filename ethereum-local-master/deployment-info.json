@@ -1,0 +1,12 @@
+{
+  "network": "localhost",
+  "deployer": "0xaD09fef381C61777D5d929A5a77C40Ad8081Cd69",
+  "contracts": {
+    "tradeUtils": "0xE3820508670e0A1A3bFe4C86325aE2bAe48eC127",
+    "vault": "0x7d3aB214d8020a65FE88C941C29099770c80D685",
+    "incognitoProxy": "0x7A55D2DeD9C9c24b152aA7Db2f22ffc08D489895",
+    "kbnTrade": "0x5580a0Db94dC5c97A6073865913b52c3aBEE8D97",
+    "uniswapTrade": "0x95b8C12496906d938311Bff81De79E9eFf1C5fFb"
+  },
+  "timestamp": "2025-04-12T05:19:28.612Z"
+}
